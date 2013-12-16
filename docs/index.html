@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documentation: Worx | ThemeTrail Handcrafted Premium Themes</title>
+<link rel="icon" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CDN Bootstrap & FontAwesome -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Theme Specific CSS -->
+<link href="assets/css/style.css" rel="stylesheet" media="screen">
+ 
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+    
+	<header class="navbar">		    
+    <nav role="navigation">
+	    <ul class="nav navbar-nav">
+	    	<li><a href="#general">General Information</a></li>
+	    	<li><a href="#navigation">Navigation</a></li>
+	    	<li><a href="#parallax">Parallax</a></li>
+	    	<li><a href="#home">Section: Home</a></li>
+	    	<li><a href="#about">Section: About</a></li>
+	    	<li><a href="#testimonials">Testimonials</a></li>
+	    	<li><a href="#services">Section: Services</a></li>
+	    	<li><a href="#twitter">Twitter</a></li>
+	    	<li><a href="#portfolio">Section: Portfolio</a></li>
+	    	<li><a href="#quote">Quote</a></li>
+	    	<li><a href="#contact">Section: Contact</a></li>
+	    	<li><a href="#freebie">BONUS: Freebie</a></li>
+	    </ul>
+    </nav>
+    <a href="" class="nav-trigger"><i class="icon-reorder"></i></a>
+	</header>
+  
+  <div id="main" class="container">
+  
+  	<div id="docs-header">
+	    <h1 class="title">Documentation: Worx</h1>
+	    <ul class="docs-meta list-unstyled">
+		    <li><span>Type:</span>One Page Parallax Portfolio Theme</li>
+		    <li><span>Version:</span>1.0</li>
+		    <li><span>Author:</span><a href="http://themetrail.com" target="_blank">ThemeTrail</a></li>
+		    <li><span>Demo:</span><a href="http://themetrail.com/worx" target="_blank">themetrail.com/worx</a></li>
+		    <li><span>Created:</span>9th Dec 2013</li>
+		    <li><span>Last Update:</span>9th Dec 2013</li>
+	    </ul>	    
+	    <p class="lead">
+		    Thank you so much for purchasing Worx. For questions beyond the scope of this documentation don't hesitate to get in touch with me: <a href="mailto:thomas@themetrail.com">thomas@themetrail.com</a>
+	    </p>	    
+	  </div>
+	  
+	  <div id="general"class="section-base">
+		  <h2 class="title">General Information</h2>
+		  <ul>
+		  <li>All stylesheets are located under <strong>assets/css</strong>. Main stylesheet is <strong>style.css</strong></li>
+		  <li>Styles written in LESS <strong>assets/less/style.less</strong> and compiled to CSS using a free app called <a href="http://incident57.com/less/" target="_blank">LESS.app</a></li>
+		  <li>All scripts are located under <strong>assets/js</strong>. Theme specific script is <strong>theme.js</strong></li>
+		  <li>Replace <strong>favicon.png</strong> with a square .png favicon of your own (32x32 or 64x64)</li>
+		  <li>Place your logo within <code>.navbar-brand</code></li>
+		  <li>Custom background overlay patterns for <code>.background-overlay</code> can be found under <strong>images/patterns</strong></li>
+		  <li>Worx is built on the popular front-end-framework <strong>Bootstrap 3</strong>. If you're already familiar with Bootstrap customizing this theme will be a breeze. But even if you've never heard of Bootstrap before, don't worry, as Bootstrap is very easy to understand and has a great documentation: <a href="http://getbootstrap.com/getting-started/" target="_blank">http://getbootstrap.com/getting-started/</a></li>
+		  </ul>
+		  
+		  <h4 class="title">Creating your own styles</h4>
+		  
+		  <p>
+			  <strong class="color-success">IMPORTANT:</strong> If you want to add custom styles don't edit the main stylesheet, use <strong>custom.css</strong> located under <strong>assets/css</strong> to add your own styles, as the main stylesheet <strong>style.css</strong> will be overridden by future updates.
+		  </p>
+		  
+		  <p>
+			  <strong>custom.css</strong> already includes the style for the default parallax background images. By changing the value of only four properties (where it says: <code>/* Replace with your primary color */</code>) you can create your very own color scheme in less than a minute.
+		  </p>
+		  
+		  <p>
+		  	For some color inspiration head over to <a href="https://kuler.adobe.com/" target="_blank">kuler.adobe.com</a> or <a href="http://pltts.me/" target="_blank">pltts.me</a>
+		  </p>
+		  
+		  <h4 class="title">Page Loading Overlay</h4>
+		  
+		  <p>
+			  As a portfolio theme with plenty of photos and maybe even some videos your site can become quite big in size. That's why we'll show our visitor a fullscreen overlay, while all the resources are getting downloaded in the background. Right after the opening body tag we add the following piece of code:
+		  </p>
+		  
+<pre class="brush: php">
+&lt;div id="loadbox">
+	&lt;div class="wrapper">
+		&lt;div class="inner">
+			&lt;!-- Here goes your custom preload content -->
+		&lt;/div>
+	&lt;/div>
+&lt;/div>
+</pre>	
+
+		<p>
+			This overlay will fade out once the page is fully loaded. By default it only shows a white background with a spinning wheel. The spinner is not a graphic. It is a jQuery plugin called <a href="http://fgnass.github.io/spin.js/" target="_blank">spin.js</a> that will create a unique spinning wheel. You can set every detail of the spinner by yourself, creating a unique loading wheel. It's a detail, but hey, this is the first impression a visitor gets of your site, and we want to make sure, it's a good one ;-)
+		</p>	  
+		
+		<p>
+			Head over to our main script <strong>assets/js/theme.js</strong> and at the very top you will find the settings for two spinning wheels.
+		</p>
+		
+<pre class="brush: js">
+/* Loading Spinner
+http://fgnass.github.io/spin.js/
+-------------------------*/	
+// Settings for Page Loading Overlay
+var spinnerHomeOptions = {
+  lines: 11, // The number of lines to draw
+  length: 10, // The length of each line
+  width: 2, // The line thickness
+  radius: 10, // The radius of the inner circle
+  corners: 0, // Corner roundness (0..1)
+  rotate: 0, // The rotation offset
+  direction: 1, // 1: clockwise, -1: counterclockwise
+  color: '#000', // #rgb or #rrggbb or array of colors
+  speed: 1.5, // Rounds per second
+  trail: 60, // Afterglow percentage
+  shadow: false, // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinnerhome', // The CSS class to assign to the spinner
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  top: 'auto', // Top position relative to parent in px
+  left: 'auto' // Left position relative to parent in px
+};
+
+// Settings for Project Loading Overlay
+var spinnerOptions = {
+  lines: 11, // The number of lines to draw
+  length: 20, // The length of each line
+  width: 2, // The line thickness
+  radius: 30, // The radius of the inner circle
+  corners: 0, // Corner roundness (0..1)
+  rotate: 0, // The rotation offset
+  direction: 1, // 1: clockwise, -1: counterclockwise
+  color: '#000', // #rgb or #rrggbb or array of colors
+  speed: 1.5, // Rounds per second
+  trail: 60, // Afterglow percentage
+  shadow: false, // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinner', // The CSS class to assign to the spinner
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  top: 'auto', // Top position relative to parent in px
+  left: 'auto' // Left position relative to parent in px
+};
+</pre>		
+		  
+		<p>
+			The <strong>spinnerHomeOptions</strong> settings will create the Page Loading Overlay spinning wheel. The <strong>spinnerOptions</strong> settings will create the spinning wheel that shows up when you open and browse through projects.
+		</p>
+		  
+	  </div><!-- #general -->
+	  
+	  <div id="navigation" class="section-base">
+		  <h2 class="title">Navigation</h2>
+		  <p>
+			  The navigation is an unordered list in your header with the class of <code>.navbar-nav</code>. Add navigation links to your header by creating a list item with anchor link, that points to the section ID that you want to link.
+		  </p>
+
+			<p><strong>Example Code: Navigation</strong></p>
+			
+<pre class="brush: php">
+&lt;ul class="nav navbar-nav">
+	&lt;li>&lt;a href="#section1">Section 1&lt;/a>&lt;/li>
+	&lt;li>&lt;a href="#section2">Section 2&lt;/a>&lt;/li>
+	&lt;li>&lt;a href="#section3">Section 3&lt;/a>&lt;/li>
+&lt;/ul>
+
+&lt;section id="section1">
+	&lt;div class="container">
+		&lt;!-- Here goes your content of section 1 -->
+	&lt;/div>
+&lt;/section>
+
+&lt;section id="section2">
+	&lt;div class="container">
+		&lt;!-- Here goes your content of section 2 -->
+	&lt;/div>
+&lt;/section>
+
+&lt;section id="section3">
+	&lt;div class="container">
+		&lt;!-- Here goes your content of section 3 -->
+	&lt;/div>
+&lt;/section>
+</pre>			
+
+		<h4 class="title">Header Visibility</h4>
+
+		<p>
+			By default the navigation is only visible once a visitor scrolls beyond the home page. If you want to the header with logo and navigation to be visible at all  times, add a class of <code>.show</code> to the <code>&lt;header></code> like this:
+		</p>
+		
+<pre class="brush: php">
+&lt;header class="navbar show">	
+</pre>
+		  
+	  </div><!-- #navigation -->
+	  
+	  <div id="parallax" class="section-base">
+		  
+		  <h2 class="title">Parallax: Background Images</h2>
+		  <div class="asset-by">Ian Lunn</div>
+			<div class="asset-url"><a href="http://www.ianlunn.co.uk/plugins/jquery-parallax/" target="_blank">http://www.ianlunn.co.uk/plugins/jquery-parallax/</a></div>
+		  
+		  <p>
+			  Background images are scrolling slower than the rest of the page, creating the impression of depth on your website. We are using this effect on the <strong>home page</strong>, and the three sections <strong>testimonials, tweets and quote</strong> that work as a divider between the white background sections.
+		  </p>
+		  
+		  <p>
+		 		By default all background images scroll at half speed. You can customize the scroll speed of each background image. Therefor go to <strong>assets/js/theme.js</strong> to the very bottom and replace the <strong>0.5</strong> values with a number between "0" and "1". The value has to be lower than "1", as "1" is the default scrolling speed, where you don't notice any parallax effect.
+		 	</p>
+		 	
+		 	<p><strong>Example Code: Custome Parallax Scroll Speed</strong></p>
+		 	
+<pre class="brush: js">
+$('#home').parallax("50%", 0.5); 				// Background: Home
+$('#testimonials').parallax("50%", 0.5); 		// Background: Testimonials
+$('#tweet').parallax("50%", 0.5); 				// Background: Tweets
+$('#quote').parallax("50%", 0.5); 				// Background: Quote
+</pre>
+
+			<p>
+				To add your own parallax sections create a section like the one in the example below and fill it with your own content. The <code>.background-overlay</code> container is optional, but recommended, as it can be hard to read text on a background image.
+			</p>
+			
+			<p><strong>Example Code: Parallax Section</strong></p>
+		
+<pre class="brush: css">
+/* Stylesheet Example Code for Background Image */
+&lt;style>
+#section-id {
+	background-image: url("path/to/your/backgroundimage.jpg");
+}
+&lt;/style>
+</pre>
+
+<pre class="brush: php">
+&lt;section id="section-id" class="parallax">
+	&lt;div class="background-overlay">&lt;/div>
+	&lt;div class="container">
+		&lt;!-- Here goes your content of this parallax section -->
+	&lt;/div>
+&lt;/section>
+</pre>
+
+<pre class="brush: js">
+// Custom Parallax Scroll Speed for this section
+&lt;script>
+$('#section-id').parallax("50%", 0.25);
+&lt;/script>
+</pre>	
+		  
+			<p>
+				The default section background images are already included within <strong>custom.css</strong>. Simply update the path to link to your own images.
+			</p>  
+			
+			<h4 class="title">Free Quality Stock Photos</h4>
+			
+			<p>
+				The images used in the demo are not included with your download. But here is a list of sites which provide you with some great unique stock photo resources that you can use (even commercially) for free: <a href="wefunction.com/8-unique-places-to-find-quality-free-photos/" target="_blank">wefunction.com/8-unique-places-to-find-quality-free-photos/</a>
+			</p>
+		  
+	  </div><!-- #parallax -->
+	  
+	  <div id="home" class="section-base">
+		  
+		  <h2 class="title">Section: Home</h2>
+		  
+		  <p>
+			  To set the full-screen background image of your homepage go to <strong>assets/css/custom.css</strong> and enter the URL to your custom background for <code>#home</code>.
+		  </p>
+		  
+		  <p>
+			  <code>.background-overlay</code> adds a light dark overlay and a background pattern of your choice on top of your background images. As text placed on a plain background image is often hard to read. Worx comes with a total of 20 background overlay patterns. You'll find them under <strong>images/patterns</strong>. Add a container of <code>.background-overlay</code> to your <code>.parallax</code> sections as well, to make the text on top of your background images more readable.
+		  </p>
+		  
+			<p><strong>Example Code: Home Section</strong></p>		  
+			
+<pre class="brush: php">
+&lt;section id="home" class="parallax">
+	&lt;div class="background-overlay">&lt;/div>
+	&lt;div class="wrapper">
+		&lt;div class="inner">
+			&lt;!-- Here goes your content -->
+		&lt;/div>
+	&lt;/div>	
+	&lt;div class="home-btn-continue">
+		&lt;a href="#about" class="btn-light animated bounceInRight">More&lt;/a>
+	&lt;/div>
+&lt;/section>
+</pre>			
+
+		<p>
+			Make sure to use the <code>.wrapper</code> and <code>.inner</code> container as shown in the example above to align your home content vertical centered. Adding the class of <code>.animated</code> and one of the 50+ animate.css effect classes will make the specific element interactive. Fading in, boucing in or whatever effect you want to apply. In our exapmle above the "more" button will bounce in from the right. To learn more about the CSS animations read on..
+		</p>
+		
+		<h4 class="title">CSS Animations</h4>
+		
+		<p>
+			To bring your homepage alive we use the popular <a href="daneden.me/animate/" target="_blank">animate.css</a> effects library. Choose from a total of 50+ effects. You can apply an effect to every element on your home page by ading a class of <code>.animated</code> and one of the effects classes, such as <code>.fadeInUp</code> or <code>bounceIn</code>.
+		</p>
+		
+		<p>
+			By default CSS animations are set to a duration of 1s and a delay of 0s. To change the duration and delay for a single effect you have to open your <strong>custom.css</strong> stylesheet add a class of <code>.animated</code> with your custom setting, as seen in the example below.
+		</p>
+		
+		<p><strong>Example Code: Custom CSS Animation</strong></p>
+		
+<pre class="brush: php">
+#home .animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+</pre>		
+
+		<p>
+			The example above will cause all animations within <code>#home</code> to be executed with a length of <strong>1.5s</strong> and a delay of <strong>3s</strong>.
+		</p>
+
+		<h4 class="title">Home Background Slideshow</h4>
+		
+		<p>
+			Instead of a single background image you can also use a fading background slideshow. To accomplish this we place the following code within our <code>#home</code> section:
+		</p>
+		
+		<p><strong>Example Code: Home Background Slideshow</strong></p>
+		
+<pre class="brush: php">
+&lt;ul class="slideshow-home">
+	&lt;li class="parallax bg1">
+		&lt;div class="wrapper">
+			&lt;div class="inner">
+				&lt;!-- Here goes slideshow #1 content -->
+			&lt;/div>
+		&lt;/div>
+	&lt;/li>
+	&lt;li class="parallax bg2">
+		&lt;div class="wrapper">
+			&lt;div class="inner">
+				&lt;!-- Here goes slideshow #2 content -->
+			&lt;/div>
+		&lt;/div>
+	&lt;/li>
+	&lt;li class="parallax bg3">
+		&lt;div class="wrapper">
+			&lt;div class="inner">
+				&lt;!-- Here goes slideshow #3 content -->
+			&lt;/div>
+		&lt;/div>
+	&lt;/li>
+&lt;/ul>
+</pre>		
+
+		<p>
+			As you can see this list doesn't contain any images. As we want all slideshow background images to cover the entire home screen, we have to add them via CSS as "background-images". Therefor head over to <strong>assets/css/custom.css</strong> and add your background slideshow images:
+		</p>
+		
+<pre class="brush: php">
+.slideshow-home .bg1 { background-image: url("path/to/your/background_slideshow_image1.jpg"); }
+.slideshow-home .bg2 { background-image: url("path/to/your/background_slideshow_image1.jpg"); }
+.slideshow-home .bg3 { background-image: url("path/to/your/background_slideshow_image1.jpg"); }
+</pre>		
+
+		<p>
+			The example above will show three fading background images. <code>.wrapper</code> and <code>.inner</code> will align your content verical centered. You can customize the slideshow options in <strong>assets/js/theme.js</strong> 
+		</p>
+		
+		<p>
+			Default slideshow options are set to:
+		</p>
+		
+<pre class="brush: js">
+// Background Slideshow "Home"
+$('.slideshow-home').bxSlider({
+	mode: 'fade',
+	pause: 4000,
+	speed: 500,
+	controls: true,
+	pager: false,
+	prevText: 			'&lt;i class="icon-angle-left">&lt;/i>',
+	nextText: 			'&lt;i class="icon-angle-right">&lt;/i>',
+	oneToOneTouch: false,
+	onSliderLoad: function() {
+		$('.slideshow-home li.parallax').parallax("50%", 0.5);
+	}		
+});
+</pre>	
+
+		<p>
+			A detailed list of all slideshow options can be found here: <a href="http://bxslider.com/options" target="_blank">bxslider.com/options</a>
+		</p>	
+		  
+	  </div><!-- #home -->
+	  
+	  <div id="about" class="section-base">
+		  
+		  <h2 class="title">Section: About Us</h2>
+		  
+		  <p>
+			  Creating an "About Us" section is as simple as copying the following code below and to fill in the blanks. (1) We need to create the about section (2) Create the modal windows that will pop up, once you click the person's overlay "more" link. If you don't want to add any details to a person, just copy the following code and delete the "more" link or the entire <code>.overlay</code>
+		  </p>
+		  
+		  <p><strong>Example Code: (1) Create About Us / Team Section</strong></p>
+		  
+<pre class="brush: php">
+&lt;section id="about">
+	&lt;div class="container">
+	
+		&lt;div class="section-heading text-center">
+			&lt;h2 class="title">About Us&lt;/h2>
+			&lt;p class="subtitle">About Us Description&lt;/p>
+		&lt;/div>
+		
+		&lt;div id="team">
+			&lt;div class="row">
+			
+				&lt;div class="col-sm-4"> 
+					&lt;div class="profile">
+						&lt;img src="path/to/your/teamimage1.jpg" alt="" class="avatar" />
+						&lt;div class="name">&lt;strong>Jeff&lt;/strong> Jungle&lt;/div>
+						&lt;div class="overlay">
+							&lt;h3 class="position">The Boss&lt;/h3>
+							&lt;div class="seperator">&lt;/div>
+							&lt;a class="btn btn-default" data-toggle="modal" href="#jeff">more&lt;/a>
+						&lt;/div>
+					&lt;/div>
+				&lt;/div>
+				
+				&lt;div class="col-sm-4">
+					&lt;div class="profile">
+						&lt;img src="path/to/your/teamimage2.jpg" alt="" class="avatar" />
+						&lt;div class="name">&lt;strong>Lena&lt;/strong> Lanossi&lt;/div>
+						&lt;div class="overlay">
+							&lt;h3 class="position">The Brain&lt;/h3>
+							&lt;div class="seperator">&lt;/div>
+							&lt;a class="btn btn-default" data-toggle="modal" href="#lena">more&lt;/a>
+						&lt;/div>
+					&lt;/div>
+				&lt;/div>
+				
+				&lt;div class="col-sm-4"> 
+					&lt;div class="profile">
+						&lt;img src="path/to/your/teamimage3.jpg" alt="" class="avatar" />
+						&lt;div class="name">&lt;strong>Wesley&lt;/strong> Weezer&lt;/div>
+						&lt;div class="overlay">
+							&lt;h3 class="position">The Geek&lt;/h3>
+							&lt;div class="seperator">&lt;/div>
+							&lt;a class="btn btn-default" data-toggle="modal" href="#wesley">more&lt;/a>
+						&lt;/div>
+					&lt;/div>
+				&lt;/div>
+				
+			&lt;/div>
+		&lt;/div>&lt;!-- #team -->
+		
+	&lt;/div>
+&lt;/section>&lt;!-- #about -->
+</pre>		  
+
+		<p>
+			<code>.col-sm-4</code> is a layout class of Bootstrap, which is based on a 12 column grid. Using a class of <code>.col-sm-4</code> will wrap our team mate into a container that fills up 4/12 of the horizontal space available, e.g. 1/3 or 33.3333%. If you are one man show use a class of <code>.col-sm-12</code>. For two people <code>.col-sm-6</code> and for four people <code>.col-sm-3</code>. To learn more about the Bootstrap class prefix head over to <a href="http://getbootstrap.com/css/#grid-options" target="_blank">http://getbootstrap.com/css/#grid-options</a>
+		</p>
+		
+		<p>
+			To trigger the pop up of our modal window that we will create in the next step it is important that you add the <code>data-toggle="modal"</code> attribute to your anchor link(s). Point each anchor link to the modal container, that we will create now.
+		</p>
+		
+		<p><strong>Example Code: (2) Teammate modal</strong></p>
+		
+<pre class="brush: php">
+&lt;!-- Modal (Jeff) -->
+&lt;div class="modal fade" id="jeff" tabindex="-1" role="dialog" aria-labelledby="jeff" aria-hidden="true">
+  &lt;div class="modal-dialog">
+    &lt;div class="modal-content container">
+
+      &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;&lt;/button>
+      
+      &lt;div class="modal-profile">
+      	&lt;div class="row">
+	      	&lt;div class="col-md-4 col-sm-6">
+			    	&lt;img src="path/to/your/teammate1.jpg" alt="" class="avatar" />
+	      		&lt;div class="name">&lt;strong>Jeff&lt;/strong> Jungle&lt;/div>
+	      		&lt;div class="social-networks">
+		      		&lt;a href="#" data-toggle="tooltip" data-placement="right" title="twitter.com/yourprofile">&lt;i class="icon-twitter icon-large">&lt;/i>&lt;/a>
+		      		&lt;a href="#" data-toggle="tooltip" data-placement="right" title="facebook.com/yourprofile">&lt;i class="icon-facebook icon-large">&lt;/i>&lt;/a>
+		      		&lt;a href="#" data-toggle="tooltip" data-placement="right" title="linkedin.com/yourprofile">&lt;i class="icon-linkedin icon-large">&lt;/i>&lt;/a>
+		      		&lt;a href="#" data-toggle="tooltip" data-placement="right" title="google.com/yourprofile">&lt;i class="icon-google-plus icon-large">&lt;/i>&lt;/a>
+		      		&lt;a href="#" data-toggle="tooltip" data-placement="right" title="dribbble.com/yourprofile">&lt;i class="icon-dribbble icon-large">&lt;/i>&lt;/a>
+							&lt;a href="#" data-toggle="tooltip" data-placement="right" title="github.com/yourprofile">&lt;i class="icon-github icon-large">&lt;/i>&lt;/a>
+	      		&lt;/div>
+	      	&lt;/div>
+					&lt;div class="col-md-8 col-sm-6">
+						&lt;div class="details">
+							&lt;h3 class="position">The Boss&lt;/h3>
+							
+							&lt;p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, repellat, nobis, expedita, voluptates veritatis autem dolores numquam beatae ratione voluptatem atque vero sit porro dolor esse qui magnam.
+							&lt;/p>
+							
+							&lt;h4 class="sub-heading">His Superpowers&lt;/h4>
+							
+							&lt;div class="progress">
+							  &lt;div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+							  	Web Design
+							    &lt;span class="sr-only">80% Complete&lt;/span>
+							  &lt;/div>
+							&lt;/div>
+							&lt;div class="progress">
+							  &lt;div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+							  	Branding
+									&lt;span class="sr-only">85% Complete&lt;/span>
+							  &lt;/div>
+							&lt;/div>
+							&lt;div class="progress">
+							  &lt;div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+							  	Illustration
+									&lt;span class="sr-only">75% Complete&lt;/span>
+							  &lt;/div>
+							&lt;/div>
+							
+						&lt;/div>
+					&lt;/div>
+	      &lt;/div>
+      &lt;/div>
+      
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+</pre>		
+
+		<p>
+			Give the <code>.modal</code> container the same ID that you used for the link, that points to it. In our case we link to the modal container like this <code>&lt;a class="btn btn-default" data-toggle="modal" href="#jeff">more&lt;/a></code>. Therefor we will give our modal the ID of "jeff".
+		</p>
+		
+		<p>
+			As modals have a fixed position, laying above the content, and not within the page flow, you can place them wherever you want within the body. We place them right before the closing body tag, right before our scripts.
+		</p>
+		  
+		<h3 class="title">Timeline: jQuery Timelinr 0.9.53</h3>
+		<div class="asset-by">Jorge Epuñan</div>
+		<div class="asset-url"><a href="http://www.csslab.cl/2011/08/18/jquery-timelinr/" target="_blank">http://www.csslab.cl/2011/08/18/jquery-timelinr/</a></div>
+
+		<p>
+			Great little plugin, that allows you to add some more personality to your portfolio by creating a unique timeline. The <a href="http://themetrail.com/worx#timeline" target="_blank">demo</a> shows a yearly timeline, but you can change this to any kind of event. Insert any kind of HTML content, such as text, images, audio or video, as you can see in the demo. The timeline also adapts in height according to it's content.
+		</p>
+		
+		<p>
+			(1) Create a <code>#timeline</code> container. (2) Inside of it create an unordered list named <code>#dates</code> that we use to link to each event. Every list item contains an anchor link, that point to a certain event. (3) We have to create an unordered list named <code>#events</code>. This list holds all events. One event per list item. Make sure to give each list item the same ID that you used for the event link.
+		</p>
+		
+		<p><strong>Example Code: Timeline</strong></p>
+		
+<pre class="brush: php">
+&lt;div id="timeline">
+
+&lt;ul id="dates">
+	&lt;li>&lt;a href="#event1">Event 1&lt;/a>&lt;/li>
+	&lt;li>&lt;a href="#event2">Event 2&lt;/a>&lt;/li>
+	&lt;li>&lt;a href="#event3">Event 3&lt;/a>&lt;/li>
+&lt;/ul>
+
+&lt;ul id="events">
+	&lt;li id="event1">
+		&lt;!-- Here goes the content of event 1 -->
+	&lt;/li>
+	&lt;li id="event2">
+		&lt;!-- Here goes the content of event 2 -->
+	&lt;/li>
+	&lt;li id="event3">
+		&lt;!-- Here goes the content of event 3 -->
+	&lt;/li>
+&lt;/ul>
+
+&lt;/div>
+</pre>			
+
+	  </div><!-- #about -->
+		
+		<div id="testimonials" class="section-base">
+			
+			<h2 class="title">Testimonials</h2>
+			
+			<p>
+				As you're already familiar with the parallax effect by now, there is not much to explain here. We simply add a vertical slideshow to it, filled with some testimonials. To accomplish this we create an unordered list <code>.slideshow-vertical</code> within <code>.parallax-content</code>. Each list items holds one testimonial.
+			</p>
+			
+			<p><strong>Example Code: Testimonial Slideshow</strong></p>
+			
+<pre class="brush: php">
+&lt;section id="testimonials" class="parallax">
+	&lt;div class="background-overlay">&lt;/div>
+	&lt;div class="container">	
+		&lt;ul class="slideshow-vertical list-unstyled">
+			&lt;li>
+				&lt;blockquote>
+				&lt;p>Testimonials 1 text&lt;/p>
+				&lt;cite>Person 1&lt;/cite>
+				&lt;/blockquote>
+			&lt;/li>
+			&lt;li>
+				&lt;blockquote>
+				&lt;p>Testimonials 2 text&lt;/p>
+				&lt;cite>Person 2&lt;/cite>
+				&lt;/blockquote>
+			&lt;/li>
+			&lt;li>
+				&lt;blockquote>
+				&lt;p>Testimonials 3 text&lt;/p>
+				&lt;cite>Person 3;&lt;/cite>
+				&lt;/blockquote>
+			&lt;/li>
+		&lt;/ul>
+	&lt;/div>
+&lt;/section>
+</pre>			
+			
+		</div><!-- #testimonials -->
+		
+		<div id="services" class="section-base">
+			
+			<h2 class="title">Section: Services</h2>
+			
+			<p>
+				Short two step process. (1) Create the service columns. (2) Create the pricing table for each service.
+			</p>
+			
+			<p>
+				First we create a <code>.service</code> container within the <code>#services</code> section. Each service container has a title, description and link, that triggers the pricing table modal to open. Make sure you point the link to it's pricing table container, that we will create in the next step.
+			</p>
+			
+			<p><strong>Example Code: Service Column</strong></p>
+			
+<pre class="brush: php">
+&lt;div class="service col-lg-4">
+	&lt;div class="service-title">
+	&lt;h3 class="title">Service 1 Title&lt;/h3>
+	&lt;i class="icon-beaker">&lt;/i>
+	&lt;/div>
+	&lt;p class="description">Short service description&lt;/p>
+	&lt;a href="#rates-service1" data-toggle="modal" class="btn btn-default btn-lg">Show Service 1 Rates&lt;/a>
+&lt;/div>
+</pre>	
+
+		<p>
+			<code>.col-lg-4</code> is a Bootstrap layout class, making sure that our service takes up 4/12 of the containers horizontal space on desktops. To learn more about it visit <a href="http://getbootstrap.com/css/#grid-options" target="_blank">http://getbootstrap.com/css/#grid-options</a>
+		</p>
+		
+		<p>
+			For the pricing table modal we create a container with the classes of <code>.pricing-table .modal .fade</code> and give it the same ID that we used before for it's service column link. In our example it get's an ID of <code>#rates-service1</code>. Within the <code>.modal-content</code> we add a close button and the pricing column as you can see below.
+		</p>
+		
+<pre class="brush: php">
+&lt;div id="rates-service1" class="pricing-table modal fade" tabindex="-1" role="dialog" aria-labelledby="rates-service1" aria-hidden="true">
+	&lt;div class="modal-dialog">
+    &lt;div class="modal-content container">
+
+      &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;&lt;/button>
+			
+				&lt;div class="pricing-column">
+					&lt;div class="pricing-inner">
+						&lt;h3 class="pricing-title">Service 1 Title&lt;/h3>
+						&lt;p class="price-tag">&lt;span>$ 99.00&lt;/span> /hour&lt;/p>
+						&lt;ul>
+							&lt;li>Feature 1&lt;/li>
+							&lt;li>Feature 2&lt;/li>
+							&lt;li>Feature 3&lt;/li>
+						&lt;/ul>
+					&lt;/div>
+				&lt;/div>
+							
+    &lt;/div>			
+	&lt;/div>
+&lt;/div>
+</pre>		
+			
+		</div><!-- #services -->
+	  
+	  <div id="twitter" class="section-base">
+		  <h2 class="title">Twitter</h2>
+		  
+		  <p>
+			  Adding your most recent tweets within the <code>#tweet</code> container requires some work on your end, but if you follow the outlined steps it is fairly easy. We use James Mallison's <a href="https://github.com/J7mbo/twitter-api-php" target="_blank">Twitter API PHP plugin</a> to output our latest tweets.
+		  </p>
+		  
+		  <p>
+			  (1) Follow the instructions over at: <a href="http://stackoverflow.com/questions/12916539/simplest-php-example-for-retrieving-user-timeline-with-twitter-api-version-1-1/15314662#15314662" target="_blank">http://stackoverflow.com/questions/12916539/simplest-php-example-for-retrieving-user-timeline-with-twitter-api-version-1-1/15314662#15314662</a> to create your Twitter Developer account.
+		  </p>
+		  
+		  <p>
+			  Once you have got your <strong>consmumer key, consumer secret, access token and access token secret</strong> open <strong>tweet.php</strong>. On line 8 - 11 you will find the following piece of code:
+		  </p>
+		  
+<pre class="brush: php">
+$settings = array(
+'oauth_access_token' => "YOUR_OAUTH_ACCESS_TOKEN",
+'oauth_access_token_secret' => "YOUR_OAUTH_ACCESS_TOKEN_SECRET",
+'consumer_key' => "YOUR_CONSUMER_KEY",
+'consumer_secret' => "YOUR_CONSUMER_SECRET"
+);
+</pre>
+
+		<p>
+			Replace the four placeholders with the tokens from your Twitter Developer Account.
+		</p>
+		
+		<p>
+			You're almost there. Last step is to tell the plugin which twitter account you want to pull tweets from and how many of the latest tweets from this account you want to show. You only need to update the following two values on line 15 and 16 with your own.
+		</p>
+		
+<pre class="brush: php">
+$screenname = "ev"; // The screen name of the user for whom to return results for.
+$count = 3; // Specifies the number of tweets to try and retrieve, up to a maximum of 200 per distinct request
+</pre>
+
+		<p>
+			If the number of tweets you entered is higher than one your tweets will be shown in a fading slideshow. The example above would output the three latest tweets from Twitter founder Evan Williams <strong>http://twitter.com/ev</strong>
+		</p>
+		  
+	  </div><!-- #twitter -->
+	  
+	  <div id="portfolio" class="section-base">
+	  
+		  <h2 class="title">Portfolio: Isotope v1.5.25</h2>
+			<div class="asset-by">David DeSandro</div>
+			<div class="asset-url"><a href="http://isotope.metafizzy.co/" target="_blank">http://isotope.metafizzy.co/</a></div>
+  
+		  <p>
+			  Creating a portfolio is a simple and straight forward process of two (to three) steps. (0) Optional: Create a portfolio filter. (1) Add portfolio items. (2) Create project pages.
+		  </p>
+		  
+		  <h5 class="title">Step 0: Create a Portfolio Filter</h5>
+		  
+		  <p>
+			  This step is optional. You can skip it, if you don't want to make your portfolio sortable.
+		  </p>
+		  
+		  <p>
+			  Within the <code>#portfolio</code> section create an unordered list with an ID of <code>#portfolio-filter</code>. Add a single filter by creating a list item plus anchor with a <code>data-filter</code> attribute. This data-filter attribute holds the filtername. Add your filtername with a prepending dot "." Without the dot, the filter won't work. Create as many filter as you need. Add a class of <code>.active</code> to the list item that contains the filter, that you want to select by default. To learn more about the filtering visit <a href="http://isotope.metafizzy.co/docs/filtering.html" target="_blank">http://isotope.metafizzy.co/docs/filtering.html</a>
+		  </p>
+		  
+		  <p><strong>Example Code: Portfolio Filter</strong></p>
+		  
+<pre class="brush: php">
+&lt;ul id="portfolio-filter" class="list-inline">
+  &lt;li class="active">&lt;a href="#" data-filter="*">All&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#" data-filter=".filter1">Filter 1&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#" data-filter=".filter2">Filter 2&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#" data-filter=".filter3">Filter 3&lt;/a>&lt;/li>
+&lt;/ul>
+</pre>		  
+
+			<h5 class="title">Step 1: Add Portfolio Items</h5>
+			
+			<p>
+				Each list item of <code>#portfolio-list</code> contains one portfolio item.
+			</p>
+		  
+		  <p><strong>Example Code: Portfolio with Item</strong></p>
+		  
+<pre class="brush: php">
+&lt;ul id="portfolio-list">
+	&lt;li class="filter1 filter2">
+		&lt;img src="path/to/your/projectimage.jpg" alt="" />
+		&lt;div class="portfolio-item-content">
+			&lt;span class="header">Project Title&lt;/span>
+			&lt;p class="body">Short Project Description&lt;/p>
+		&lt;/div>
+		&lt;a href="#project1">&lt;i class="more">&lt;/i>&lt;/a>
+	&lt;/li>	
+&lt;/ul>
+</pre>
+
+			<p>
+				The project link must point to the project page container, that we will create in the next step. Otherwise the project page won't open.
+			</p>
+
+			<p>
+				By default you open a project page by clicking it's more icon. If you want to make the entire list item clickable, wrap the anchor around the <code>img</code> and <code>.portfolio-item-content</code>.
+			</p>
+			
+			<p>Optional: In case you are going to use the portfolio filter, this is the time to assign filter(s) to your project by adding them as classes to the list item. In our example above we assign the two filters "filter1" and "filter2" to <code>#project1</code>.</p>
+			
+			<h5 class="title">Step 2: Create a Project Page</h5>
+			
+			<p>
+				Add the following container to the <code>#projects</code> section.
+			</p>
+			
+<pre class="brush: php">
+&lt;div id="project1">
+	&lt;h3 class="title">Project Title&lt;/h3>
+	&lt;!-- Here goes your project content -->
+&lt;/div>
+</pre>			
+
+		<p>
+		As you can see the markup is very little. Just make sure you give the project container the same ID that you use for the anchor link, that points to this very project. That's it.</p>
+		
+		<h3 class="title">Clients</h3>
+		
+		<p>
+			Create an unordered list with a class of <code>.slideshow-clients</code> and wrap each client into one list element.
+		</p>
+		
+<pre class="brush: php">
+&lt;ul class="slideshow-clients list-unstyled">
+	&lt;li>&lt;img src="path/to/your/client_image.jpg" alt="" />&lt;/li>
+	&lt;li>&lt;img src="path/to/your/client_image2.jpg" alt="" />&lt;/li>
+	&lt;li>&lt;img src="path/to/your/client_image3.jpg" alt="" />&lt;/li>
+	&lt;li>&lt;img src="path/to/your/client_image4.jpg" alt="" />&lt;/li>
+&lt;/ul>
+</pre>
+		  
+	  </div><!-- #portfolio -->
+	  
+	  <div id="quote" class="section-base">
+		  
+		  <h2 class="title">Section: Quote</h2>
+		  
+		  <p>
+			  Short and sweet to create. All we need is our <code>.parallax</code> container and a quote. Also add a background image using CSS to <code>#quote</code>.
+		  </p>
+		  
+<pre class="brush: php">
+&lt;section id="quote" class="parallax">
+	&lt;div class="background-overlay">&lt;/div>
+	&lt;div class="container">
+		&lt;blockquote>
+			&lt;p>Here goes the quote..&lt;/p>
+			&lt;cite title="Person">Person&lt;/cite>
+		&lt;/blockquote>
+	&lt;/div>
+&lt;/section>
+</pre>		  
+		  
+	  </div><!-- #quote -->
+	  
+	  <div id="contact" class="section-base">
+		  
+		  <h2 class="title">Section: Contact</h2>
+		  
+		  <p>
+			 Worx has a custom, fully functional AJAX contact form, that validates and sends without a page refresh. All you need do to is to enter the recipient's email address to which all contact emails should be send to. Therefor open <strong>contactform.php</strong> and replace the default email address "your@email.com" with your own.
+			</p>
+			
+<pre class="brush: js">
+$to = 'your@email.com'; // Recipient's email address	
+</pre>			
+		  
+	  </div><!-- #contact -->
+	  
+	  <div id="video" class="section-base">
+			
+				<h2 class="title">Fluid width video embeds: FitVids 1.0</h2>
+				<div class="asset-by">Chris Coyier & Dave Rupert</div>
+				<div class="asset-url"><a href="https://github.com/davatron5000/FitVids.js/" target="_blank">https://github.com/davatron5000/FitVids.js/</a></div>
+	
+				<p>
+					These days video is pretty common on a website. That's why we included this little, very helpful plugin. Wrap your video <code>iframe</code> into a <code>.video-full-width</code> container and your video magically gets a fluid width. Gone are the days of static width videos.
+				</p>
+				
+				<p><strong>Example Code: Fluid Video</strong></p>
+				
+<pre class="brush: php">
+&lt;div class="video-full-width">
+	&lt;iframe src="http://player.vimeo.com/video/72316750?byline=0&amp;portrait=0&amp;badge=0">&lt;/iframe>
+&lt;/div>
+</pre>				
+
+			</div><!-- #video -->
+	  
+	  <div id="icon-font" class="section-base">
+		  <h2 class="title">Icon Font: Font Awesome 3.2.1</h2>
+		  <div class="asset-by">Dave Gandy</div>
+		  <div class="asset-url"><a href="http://fortawesome.github.io/Font-Awesome/3.2.1/" target="_blank">http://fortawesome.github.io/Font-Awesome/3.2.1/</a></div>
+		  
+		  <p>
+			  All icons you see in Worx are the result of a scalable vector icon font called "Font Awesome". Change icon color, size, shadow with pure CSS, as you would do with any other font. It's 2013, please no more graphics for icons anymore. An icon font has <a href="http://css-tricks.com/examples/IconFont/" target="_blank">many advantages</a> over pixelated graphic icons.
+		  </p>
+		  
+		  <p>
+			  Adding an icon is as easy as <code>&lt;i class="icon-leaf">&lt;/i></code>, which results in <i class="icon-leaf"></i>
+		  </p>
+		  
+		  <p>
+			  For a complete overview of all 361 icons visit: <a href="http://fortawesome.github.io/Font-Awesome/3.2.1/icons/" target="_blank">http://fortawesome.github.io/Font-Awesome/3.2.1/icons/</a>
+		  </p>
+		  
+		  <p>
+			  You don't have to stick the one icon font. To create your very own out of many popular and not so popular icon fonts head over to: <a href="icomoon.io/app/" target="_blank">icomoon.io/app/</a>
+		  </p>
+		  
+	  </div><!-- #icon-font -->  
+	  
+	  <p class="lead">
+	  	I hope with the help of this documentation you are able to create your very own and unique one page portfolio site. If you are still wondering about anything Worx related, just drop me an email: <a href="mailto:thomas@themetrail.com">thomas@themetrail.com</a>
+	  </p>
+	  
+	  <h3 id="freebie">Freebies and more..</h3>
+	  
+	  <p>
+	  	To be the first to receive freebies, sneak peeks, hear about new and exclusive theme releases and other great ThemeTrail deals, jump on the list. I don't spam and you can unsubscribe at any time: <a href="http://themetrail.com" target="_blank">www.themetrail.com</a>
+	  </p>
+	  
+	  <p>
+	  	Again, thank you so much for your support by using one of my themes. <strong>You are awesome!!</strong><br />
+	  	Thomas
+	  </p>
+	  
+	</div><!-- #main -->
+	
+<footer id="footer">
+	<div class="container">
+		<p>
+			&copy; 2013 by <a href="http://themetrail.com" target="_blank">ThemeTrail</a>
+		</p>
+	</div>
+</footer>
+	
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- Documentation only - Syntax Highlighter -->
+<link type="text/css" rel="stylesheet" href="assets/syntaxhighlighter/styles/shCoreDefault.css"/>
+<link type="text/css" rel="stylesheet" href="assets/syntaxhighlighter/styles/shThemeDefault.css"/>
+<script src="assets/syntaxhighlighter/scripts/shCore.js"></script>
+<script src="assets/syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script src="assets/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script src="assets/syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script src="assets/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+<script>SyntaxHighlighter.all();</script>
+
+<script>
+$(document).ready(function() {
+
+// Bootstrap Plugins
+$('.dropdown-toggle').dropdown();
+$('[data-toggle="tooltip"]').tooltip(); 
+
+
+// Smooth scroll when clicking anchor links
+$('a[href^="#"]').on('click', function(e) {     
+  e.preventDefault();    
+  $('html,body').animate({scrollTop:$(this.hash).offset().top }, 400);
+});
+
+$('.nav-trigger').click(function(e) {
+	e.preventDefault();    
+	$('.navbar').toggleClass('move-in');
+	$('.container').toggleClass('move-out');
+});
+
+});
+</script>
+  
+</body>
+</html>

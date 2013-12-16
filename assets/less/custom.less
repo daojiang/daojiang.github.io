@@ -1,0 +1,43 @@
+.background-overlay {
+	opacity: 0.3; /* Set the background overlay opacity by entering a value between "0" and "1"  */
+	filter: alpha(opacity=30);
+  background: rgba(0, 0, 0, 0.6) url("../../images/patterns/white_diagonal_up.png") repeat; /* Replace this URL with a background overlay pattern of your choice. Patterns library can be found under: "images/patterns/" */
+} 
+
+#home {
+	background-image: url("http://placehold.it/1920x1080/ccc/fff&text=Home-Background+Image"); /* Replace this URL with your own homepage background image */
+	.slideshow-home {
+		.bg1 { background-image: url("http://placehold.it/1920x1080/ccc/fff&text=Slide1-Background+Image"); } /* Slideshow Background Image Slide 1 */
+		.bg2 { background-image: url("http://placehold.it/1920x1080/ccc/fff&text=Slide2-Background+Image"); } /* Slideshow Background Image Slide 2 */
+		.bg3 { background-image: url("http://placehold.it/1920x1080/ccc/fff&text=Slide3-Background+Image"); } /* Slideshow Background Image Slide 3 */
+	}
+}
+
+#testimonials {
+	background-image: url("http://placehold.it/1920x1080/A7DBD8/fff&text=Testimonials-Background+Image"); /* Replace this URL with your own testimonials background image */
+}
+
+#tweet {
+	background-image: url("http://placehold.it/1920x1080/A7DBD8/fff&text=Tweet-Background+Image"); /* Replace this URL with your own tweet background image */
+}
+
+#quote {
+	background-image: url("http://placehold.it/1920x1080/A7DBD8/fff&text=Quote-Background+Image"); /* Replace this URL with your own quote background image */
+}
+
+@color-primary: #FFCD00; // Set your primary color
+
+a, .color-primary, #timeline #dates a:hover {
+	color: @color-primary;  /* Replace with your primary color */
+}
+
+.btn:hover, .modal-profile .details .position, header.navbar .navbar-toggle .icon-bar, #toggle-navbar, #services .service-title .title, #services .btn:hover, .pricing-table .pricing-title, .progress-bar:hover, #portfolio-filter li.active, #portfolio-list li .header {
+	background: @color-primary;  /* Replace with your primary color */
+}
+
+#portfolio-list li:hover .more:hover:before {
+	color: @color-primary;  /* Replace with your primary color */
+	border-color: @color-primary;  /* Replace with your primary color */
+}
+
+.arrow-down { border-top-color: @color-primary; }
